@@ -1,4 +1,4 @@
-//* Asegurando que todo el cuerpo de la app ocupe todo el alto de la pantalla */
+/* Asegurando que todo el cuerpo de la app ocupe todo el alto de la pantalla */
 body, html {
   margin: 0;
   padding: 0;
@@ -12,7 +12,8 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f0f2f5;
-  /* margin-top: 20px; Eliminar esta línea */
+  margin-top: 20px; /* Espacio superior para no superponerse con el borde de la pantalla */
+  overflow-y: auto; /* Permite desplazamiento vertical */
 }
 
 /* Contenedor principal para la app */
@@ -24,7 +25,8 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   box-sizing: border-box;
-  overflow: auto; /* Para evitar desbordamiento y permitir scroll */
+  overflow-y: auto; /* Permite desplazamiento vertical */
+  height: 100%; /* Asegura que ocupe el 100% de la pantalla */
 }
 
 /* Estilo para el encabezado */
@@ -89,7 +91,6 @@ input:focus, select:focus, textarea:focus {
 form {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Añade un espacio uniforme entre los elementos del formulario */
 }
 
 label {
@@ -114,23 +115,4 @@ header {
   padding: 20px;
   text-align: center;
   border-radius: 10px;
-}
-
-/* Media Queries para pantallas pequeñas (como móviles) */
-@media (max-width: 600px) {
-  #root {
-    padding: 15px;
-  }
-
-  .header h1 {
-    font-size: 1.4em; /* Ajustar tamaño de texto para pantallas pequeñas */
-  }
-
-  button {
-    font-size: 0.9em;
-  }
-
-  input, select, textarea, button {
-    margin-bottom: 10px; /* Ajuste de espacio entre elementos */
-  }
 }
