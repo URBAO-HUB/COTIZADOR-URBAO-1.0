@@ -10,7 +10,7 @@ body, html {
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Alinea hacia el inicio de la pantalla */
   background-color: #f0f2f5;
   margin-top: 20px; /* Espacio superior para no superponerse con el borde de la pantalla */
   overflow-y: auto; /* Permite desplazamiento vertical */
@@ -26,7 +26,8 @@ body {
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto; /* Permite desplazamiento vertical */
-  height: 100%; /* Asegura que ocupe el 100% de la pantalla */
+  height: auto; /* Permite que el tamaño del contenedor se ajuste al contenido */
+  min-height: 100%; /* Asegura que el contenedor ocupe al menos todo el alto de la pantalla */
 }
 
 /* Estilo para el encabezado */
