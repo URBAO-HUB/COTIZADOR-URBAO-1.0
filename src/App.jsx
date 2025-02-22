@@ -100,7 +100,11 @@ function App() {
     const dia = fecha.getDate().toString().padStart(2, '0');
     const mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
     const anio = fecha.getFullYear().toString().slice(-2);
-    const secuencia = form.consecutivoReferencia.padStart(2, '0'); // Usar el consecutivo que el usuario ingrese
+    const hora = fecha.getHours().toString().padStart(2, '0'); 
+    const minutos = fecha.getMinutes().toString().padStart(2, '0'); 
+
+    const secuencia = `01${hora}${minutos}`; // Combinación fija + hora + minutos
+
     return `UR-${anio}${mes}${dia}-${secuencia}`;
   };
 
