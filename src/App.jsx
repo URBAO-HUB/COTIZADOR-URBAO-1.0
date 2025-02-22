@@ -103,7 +103,7 @@ function App() {
     const hora = fecha.getHours().toString().padStart(2, '0'); 
     const minutos = fecha.getMinutes().toString().padStart(2, '0'); 
 
-    const secuencia = `01${hora}${minutos}`; // Combinación fija + hora + minutos
+    const secuencia = `02${hora}${minutos}`; // Combinación fija + hora + minutos
 
     return `UR-${anio}${mes}${dia}-${secuencia}`;
   };
