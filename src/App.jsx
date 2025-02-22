@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import jsPDF from 'jspdf';
-import { saveAs } from 'file-saver'; // Importación de FileSaver.js
 import logo from './assets/Logotipo-Texto-Gris.png'; // Ruta correcta del logo
 import firma from './assets/Firma Arq Hdz.png'; // Ruta correcta de la firma
 import './index.css'; // Asegúrate de que los estilos estén importados
@@ -196,7 +195,22 @@ function App() {
 
     const pdfBlob = doc.output('blob');
 
-    saveAs(pdfBlob, 'cotizacion.pdf');
+    // Verifica si la Web Share API está disponible
+    if (navigator.share) {
+      navigator.share({
+        files: [
+          new File([pdfBlob], 'cotizacion.pdf', { type: 'application/pdf' })
+        ],
+        title: 'Cotización de Servicios Profesionales',
+        text: 'Aquí está la cotización solicitada.',
+      }).then(() => {
+        console.log('Archivo enviado correctamente');
+      }).catch((error) => {
+        console.log('Error al intentar compartir:', error);
+      });
+    } else {
+      alert('No se puede compartir el archivo en este navegador');
+    }
   };
 
   return (
