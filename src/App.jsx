@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import jsPDF from 'jspdf';
 import logo from './assets/Logotipo-Texto-Gris.png'; // Ruta correcta del logo
-import firma from './assets/Firma Arq Hdz.png'; // Ruta correcta de la firma
+import firma from './assets/Firma Rafael.png'; // Ruta correcta de la firma
 import './index.css'; // Asegúrate de que los estilos estén importados
 
 function App() {
@@ -187,11 +187,11 @@ function App() {
     doc.addImage(firma, 'PNG', 70, 237, 50, 20);
     doc.setFont("helvetica", "bold");    
     doc.setFontSize(10);
-    doc.text('Arq. Luis D. Hernández,', 105, 260, { align: 'center' });
+    doc.text('Rafael Gutierrez Alhadro,', 105, 260, { align: 'center' });
     doc.setFont("helvetica", "normal");    
     doc.setFontSize(10);
-    doc.text('Director General', 105, 265, { align: 'center' });
-    doc.text('Tijuana Baja California, México, Tel. 664-376-5871, correo electrónico: cubikmex@gmail.com', 105, 290, { align: 'center' });
+    doc.text('Promotor Autorizado', 105, 265, { align: 'center' });
+    doc.text('Tijuana Baja California, México, Tel. 664-774-1633, correo electrónico: rafaelgutierrezalhadro@gmail.com', 105, 290, { align: 'center' });
 
     doc.save('cotizacion.pdf');
   };
