@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import jsPDF from 'jspdf';
+import { saveAs } from 'file-saver'; // Importación de FileSaver.js
 import logo from './assets/Logotipo-Texto-Gris.png'; // Ruta correcta del logo
 import firma from './assets/Firma Arq Hdz.png'; // Ruta correcta de la firma
 import './index.css'; // Asegúrate de que los estilos estén importados
@@ -193,7 +194,9 @@ function App() {
     doc.text('Director General', 105, 265, { align: 'center' });
     doc.text('Tijuana Baja California, México, Tel. 664-376-5871, correo electrónico: cubikmex@gmail.com', 105, 290, { align: 'center' });
 
-    doc.save('cotizacion.pdf');
+    const pdfBlob = doc.output('blob');
+
+    saveAs(pdfBlob, 'cotizacion.pdf');
   };
 
   return (
