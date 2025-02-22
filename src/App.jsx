@@ -184,7 +184,7 @@ function App() {
     doc.text(`FORMA DE PAGO: ${form.formaPago}`, 20, 210);
     doc.text(`OBSERVACIONES: ${form.observaciones}`, 20, 220);
     doc.text('Atentamente', 105, 235, { align: 'center' });
-    doc.addImage(firma, 'PNG', 80, 237, 50, 20);
+    doc.addImage(firma, 'PNG', 100, 237, 50, 20);
     doc.setFont("helvetica", "bold");    
     doc.setFontSize(10);
     doc.text('Rafael Gutierrez Alhadro,', 105, 260, { align: 'center' });
