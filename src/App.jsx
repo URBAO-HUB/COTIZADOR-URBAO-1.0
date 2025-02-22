@@ -254,16 +254,7 @@ function App() {
           </ul>
         </div>
 
-        <div className="form-group">
-          <label>Modificar Ref. No. (Consecutivo):</label>
-          <input
-            type="text"
-            name="consecutivoReferencia"
-            value={form.consecutivoReferencia}
-            onChange={handleChange}
-          />
-        </div>
-
+        
         <div className="form-group">
           <label>Superficie (m²):</label>
           <input
