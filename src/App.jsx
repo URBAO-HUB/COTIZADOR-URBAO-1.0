@@ -40,7 +40,7 @@ function App() {
     superficie: '',
     porcentajeDescuento: '',
     iva: 16,
-    secuencia: '01',
+    secuencia: '02',
     periodoTrabajo: '',
     vigenciaPresupuesto: '15 días',
     formaPago: '50% Anticipo, 50% Finiquito Contra Entrega',
